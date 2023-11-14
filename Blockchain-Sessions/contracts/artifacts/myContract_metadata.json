@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.15+commit.e14f2714"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "calculate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "sum",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/myCOntract.sol": "myContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/myCOntract.sol": {
+			"keccak256": "0xfbc1702e54cde8e0e2151c06970862496afc444dc31606f6b9d48aafcd3f5206",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://539ed0bed3018b5c38d4bc46f57a8078db2eef0b18a18cc2e986126b0817d064",
+				"dweb:/ipfs/QmNc4e452HeRjL5unrdGX3UazqPmxNEbCJ2oaat2d5AfYa"
+			]
+		}
+	},
+	"version": 1
+}

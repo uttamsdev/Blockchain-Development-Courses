@@ -1,0 +1,79 @@
+{
+	"compiler": {
+		"version": "0.8.14+commit.80d49f37"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "sendMoney",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "withdrawAllMoney",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ExampleMappingWithdraw.sol": "ExampleMappingWithdraws"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ExampleMappingWithdraw.sol": {
+			"keccak256": "0xe9c6e90c2a5759a7e40efc7432ba39927c249b1b9a5281371ef10a6017fb5136",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c2e28d722fc64d12a896bbc9051a0aa0cd705661de69969bf75e41b53c1d7d8b",
+				"dweb:/ipfs/QmSG9dDDNuBkjr6Ycs1f9vLo3t69b9Jo3Sez7ohdbsdZJY"
+			]
+		}
+	},
+	"version": 1
+}

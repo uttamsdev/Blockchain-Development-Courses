@@ -1,0 +1,335 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "_certificateId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "candidate_name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "fathers_name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "academi",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "course_name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "passing_year",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "gred",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "edited",
+          "type": "bool"
+        }
+      ],
+      "name": "createCertificate",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_old",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "_candidate_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_fathers_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_academi",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_course_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_passing_year",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_grade",
+          "type": "string"
+        }
+      ],
+      "name": "editCertificate",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "oldAdd",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "newAdd",
+          "type": "bytes32"
+        }
+      ],
+      "name": "editEvent",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_candidate_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_fathers_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_academi",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_course_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_passing_year",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_grade",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "_edited",
+          "type": "bool"
+        }
+      ],
+      "name": "generateCertificate",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "certId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "string",
+              "name": "candidate_name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "fathers_name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "academi",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "course_name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "passing_year",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "gred",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "edited",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct Certification.Certificate[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getCertificateCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "certId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "string",
+              "name": "candidate_name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "fathers_name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "academi",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "course_name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "passing_year",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "gred",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "edited",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct Certification.Certificate",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getEditedChain",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "oldAdd",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "newAdd",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct Certification.edited[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}

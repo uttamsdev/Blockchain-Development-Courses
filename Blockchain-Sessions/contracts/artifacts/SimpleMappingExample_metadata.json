@@ -1,0 +1,78 @@
+{
+	"compiler": {
+		"version": "0.8.14+commit.80d49f37"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "myMapping",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "setValue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/myCOntract.sol": "SimpleMappingExample"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/myCOntract.sol": {
+			"keccak256": "0x46f2ccb7cd51fbaab00b4dc6a4a0407a7d158555694cb7e76d6767def7e04ed3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8bc4051a503f5126c346cb08a0dc0eb5b3e2c19f9785295af784efde48b4ee95",
+				"dweb:/ipfs/QmaLCsddSoibAWsiLBp4VurD8jp7JVWtzRxxzFXhp1paqn"
+			]
+		}
+	},
+	"version": 1
+}

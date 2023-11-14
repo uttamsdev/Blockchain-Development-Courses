@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "a",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "callFunction",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/8-constructor-modifer-inheritance.sol": "contract2"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/8-constructor-modifer-inheritance.sol": {
+			"keccak256": "0xe2c6ad56fd60924b020f799f70758b8ee0b9e33fae4e3ef363344090c12f1458",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8e60cfbd928359c0d7d827e1c67f995842072f14a0321c3893bdd63ce52d0444",
+				"dweb:/ipfs/QmboSeUoyvK7Mqd1EVDhpPDrJXabyoSKM43YHZRALY3YRx"
+			]
+		}
+	},
+	"version": 1
+}

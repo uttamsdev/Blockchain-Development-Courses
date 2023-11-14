@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "calculate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "sum",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/11-forLoop.sol": "forLoop"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/11-forLoop.sol": {
+			"keccak256": "0xd6cff290e09d31a7577db502e82ec831d783e27b133b8183b06e751e27fccd72",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d8159e5b817b5472116743d0fb2e23779d9855ae452aaab71000b9eafb357ad5",
+				"dweb:/ipfs/QmVGaFUubP7yuZLP5NXMXUrfndzuBQm5kuvTebNhbx1GiE"
+			]
+		}
+	},
+	"version": 1
+}

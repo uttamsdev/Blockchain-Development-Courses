@@ -1,0 +1,71 @@
+{
+	"id": "7f510c21d83fef8826c9d75898f70ee2",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.14",
+	"solcLongVersion": "0.8.14+commit.80d49f37",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/ExampleMappingStruct.sol": {
+				"content": "// //SPDX-License-Identifier: MIT\n\n// pragma solidity ^0.8.14;\n\n// contract MappingsStructExample {\n\n//     struct Transaction {\n//         uint amount;\n//         uint timestamp;\n//     }\n\n//     struct Balance {\n//         uint totalBalance;\n//         uint numDeposits;\n//         mapping(uint => Transaction) deposits;\n//         uint numWithdrawals;\n//         mapping(uint => Transaction) withdrawals;\n//     }\n\n//     mapping(address => Balance) public balanceReceived;\n\n\n//     function getBalance(address _addr) public view returns(uint) {\n//         return balanceReceived[_addr].totalBalance;\n//     }\n\n//     function depositMoney() public payable {\n//         balanceReceived[msg.sender].totalBalance += msg.value;\n\n//         Transaction memory deposit = Transaction(msg.value, block.timestamp);\n//         balanceReceived[msg.sender].deposits[balanceReceived[msg.sender].numDeposits] = deposit;\n//         balanceReceived[msg.sender].numDeposits++;\n//     }\n\n//     function withdrawMoney(address payable _to, uint _amount) public {\n//         balanceReceived[msg.sender].totalBalance -= _amount; //reduce the balance by the amount ot withdraw\n\n//         //record a new withdrawal\n//         Transaction memory withdrawal = Transaction(msg.value, block.timestamp);\n//         balanceReceived[msg.sender].withdrawals[balanceReceived[msg.sender].numWithdrawals] = withdrawals;\n//         balanceReceived[msg.sender].numWithdrawals++;\n\n//         //send the amount out.\n//         _to.transfer(_amount);\n//     }\n// }\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"errors": [
+			{
+				"component": "general",
+				"errorCode": "3420",
+				"formattedMessage": "Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.14;\"\n--> contracts/ExampleMappingStruct.sol\n\n",
+				"message": "Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.14;\"",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "contracts/ExampleMappingStruct.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"contracts/ExampleMappingStruct.sol": {
+				"ast": {
+					"absolutePath": "contracts/ExampleMappingStruct.sol",
+					"exportedSymbols": {},
+					"id": 1,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [],
+					"src": "1531:0:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

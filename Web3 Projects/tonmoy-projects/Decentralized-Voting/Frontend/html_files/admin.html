@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Moralis SDK code -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+    <title>admin</title>
+
+
+  </head>
+
+  <body class="bg-zinc-900 font-heading relative">
+    <!-- modal div -->
+    <div id="modal" class="hidden transition-all place-items-center mx-auto container absolute z-auto w-100 h-100">
+      <div
+        class="bg-zinc-100 rounded transition-opacity ease-in-out duration-1000 shadow-md w-100 lg:w-[40%] md:w-[40%] items-center mt-[20%] text-zinc-900 p-5">
+        <div id="modal-content" class="">
+          <div id="modal-header" class="flex justify-between items-center py-2">
+            <h2 id="modal-title"></h2>
+            <span id="close"
+              class="text-zinc-500 font-sans font-medium text-xl hover:text-zinc-900 cursor-pointer">close</span>
+          </div>
+          <div class="border border-zinc-200 shadow-sm"></div>
+          <div id="modal-body" class="px-3 py-10">
+          </div>
+          <div class="border border-zinc-200 shadow-sm"></div>
+          <div id="modal-footer" class="flex justify-center items-center pt-3">
+            <button href="#close" id="closeBtn" style="font-size: 12px;"
+              class="font-sans text-sm font md:mx-3 py-2 px-7 bg-red-600 hover:bg-red-500 text-white rounded-full cursor-pointer">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of modal -->
+    <div class="">
+      <header class="container mx-auto my-10">
+        <div class="flex  mx-5 justify-between items-center">
+          <div class="text-white">
+            <a class="block text-2xl" href=".././index.html">
+              < Zuri <span class="text-red-600">.</span> Blockgames />
+            </a>
+          </div>
+          <div class="flex justify-between items-center">
+            <div class="flex justify-around text-white items-center mx-12">
+              <a href="./admin.html" class="lg:mx-10 text-red-500 mx-3 underline block">Admin</a>
+              <a href="./vote.html" class="lg:mx-10 hover:text-red-500 mx-3 underline block">Vote</a>
+              <a href="./stakeholders.html" class="lg:mx-10 hover:text-red-500 mx-3 underline block">StakeHolders</a>
+              <a href="./result.html" class="lg:mx-10 hover:text-red-500 mx-3 underline block">Result</a>
+              <a href="#" style="font-size: 12px;" id="wallet-address"
+                class="font-sans text-sm font md:mx-3 py-2 px-5 bg-zinc-800 hover:bg-zinc-700 text-white rounded-full cursor-pointer">
+                wallet-address
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="">
+        <!-- status bar -->
+        <section class="container w-3/4 mx-auto text-white p-5">
+          <div class="flex justify-between items-center align-middle" id="status">
+            <div class="mx-3 mt-6" id="candidateCount">Candidate: 0</div>
+            <div class="mx-3 mt-6" id="BODCount">Board of directors: 0</div>
+            <div class="mx-3 mt-6" id="studentCount">Students: 0</div>
+            <div class="mx-3 mt-6" id="teacherCount">Teachers: 0</div>
+            <div class="flex justify-between">
+              <div class="mx-3 flex flex-col justify-center items-center">
+                <div class="p-1 h-6 w-12 shadow-md bg-red-600 border-red-400" id="voting-status"></div>
+                <div id="votingStatusText">Voting Inactive</div>
+              </div>
+              <div class="mx-3 flex flex-col justify-center items-center">
+                <div class="p-1 h-6 w-12 shadow-md bg-red-600 border-red-400" id="result-status"></div>
+                <div id="resultStatusText">Result Inactive</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- end of status bar -->
+        <section class="container w-1/2 mx-auto text-white">
+          <div class="flex items-center justify-center cursor-pointer">
+            <div class="bg-green-600 p-2 rounded-l-full text-sm text-bold">Chairman Address</div>
+            <div id="chairman-address" class="bg-zinc-800 hover:bg-green-100 hover:text-green-900 p-2 rounded-r-full text-sm">Address</div>
+          </div>
+        </section>
+
+        <section class="w-4/5 mx-auto">
+          <div class="grid grid-cols-2 items-center my-32 gap-8 text-white">
+            <!-- form 1 -->
+            <div id="form1">
+              <h3 class="text-3xl text-bold font-heading font-medium">Create Candidate Profile</h3>
+              <p class="text-sm font-thin">Restricted to Chairman, Board of Directors and Teachers.</p>
+              <form action="#candidateForm" class="w-4/5" id="form-addCandidates">
+                <div class="my-5">
+                  <input type="text" class="rounded-full w-full px-4 py-2 block w-100 bg-zinc-800"
+                    placeholder="FirstName" id="input-firstname">
+                </div>
+                <div class="my-5">
+                  <input type="text" class="rounded-full w-full px-4 py-2 block w-100 bg-zinc-800"
+                    placeholder="Surname">
+                </div>
+                <div class="my-5">
+                  <div class="grid grid-cols-2 gap-4">
+                    <input type="text" class="rounded-full w-full px-4 py-2 block w-100 bg-zinc-800" placeholder="Age">
+                    <input type="text" class="rounded-full w-full px-4 py-2 block w-100 bg-zinc-800" placeholder="Post">
+                  </div>
+                </div>
+                <div class="my-5">
+                  <label for="addFile" class="rounded-full text-center hover:bg-zinc-700 px-8 py-2 bg-zinc-800">
+                    Add file
+                    <input type="file" class="opacity-0 h-0 w-0" id="addFile">
+                  </label>
+                </div>
+                <div class="my-14">
+                  <button for="addFile" id="btn-addCandidate"
+                    class="block rounded-full w-full text-center hover:bg-red-500 border-red-400 px-8 py-2 bg-red-600">
+                    Add Candidate
+                  </button>
+                </div>
+              </form>
+
+              <!-- Transfer ownership -->
+              <div class="w-4/5">
+                <h3 class="text-3xl text-bold font-heading font-medium">Transfer ownership</h3>
+                <p class="text-sm font-thin">Restricted to Chairman</p>
+                <form action="#transferForm">
+                  <div class="my-8">
+                    <input type="text" class="rounded-full w-full block w-100 px-4 py-2 bg-zinc-800"
+                      placeholder="Input address" id="newOwnership-address">
+                  </div>
+                  <div class="my-14">
+                    <button for="addFile" id="btn-transferChairman"
+                      class="block rounded-full w-full text-center hover:bg-red-500 border-red-400 px-8 py-2 bg-red-600">
+                      Transfer ownership
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- transfer ownership emd -->
+            </div>
+
+
+            <!-- form 2 -->
+            <div id="form2">
+              <div class="w-4/5 ml-14">
+                <h3 class="text-3xl text-bold font-heading font-medium">Open/Close Voting Portal</h3>
+                <p class="text-sm font-thin">Restricted to Chairman</p>
+                <form action="#candidateForm">
+                  <div class="my-8">
+                    <input type="text" class="rounded-full w-full block w-100 px-4 py-2 bg-zinc-800"
+                      placeholder="Input your secret Code">
+                  </div>
+                  <div class="w-3/4 my-5">
+                    <div class="grid grid-cols-2 gap-4">
+                      <button type="button" id="btn-voting-open"
+                        class="rounded-full w-full px-4 py-2 block w-100 bg-green-600 hover:bg-green-500 border-green-400">Open
+                        Voting</button>
+                      <button type="button" id="btn-voting-close"
+                        class="rounded-full w-full px-4 py-2 block w-100 bg-red-600 hover:bg-red-500 border-red-400">Close
+                        Voting</button>
+                    </div>
+                  </div>
+                </form>
+
+                <div class=" mt-7">
+                  <h3 class="text-3xl text-bold font-heading font-medium">Open/Close Results Portal</h3>
+                  <p class="text-sm font-thin">Restricted to Chairman</p>
+                  <form action="#candidateForm">
+                    <div class="my-8">
+                      <input type="text" class="rounded-full w-full block w-100 px-4 py-2 bg-zinc-800"
+                        placeholder="Input your secret Code">
+                    </div>
+                    <div class="w-3/4 my-5">
+                      <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-2 sm:grid-cols-1 gap-4">
+                        <button type="button"
+                          class="rounded-full w-full px-4 py-2 block w-100 bg-green-600 hover:bg-green-500 border-green-400"
+                          id="btn-result-open">Open
+                          Result</button>
+                        <button type="button"
+                          class="rounded-full w-full px-4 py-2 block w-100 bg-red-600 hover:bg-red-500 border-red-400"
+                          id="btn-result-close">Close
+                          Result</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class=" mt-7">
+                  <h3 class="text-3xl text-bold font-heading font-medium">Add Stake Holders</h3>
+                  <p class="text-sm font-thin">Restricted to Chairman</p>
+                  <form action="#candidateForm">
+                    <div class="my-8">
+                      <input type="text" class="rounded-full w-full block w-100 px-4 py-2 bg-zinc-800"
+                        placeholder="Input address" id="input-address">
+                      <br>
+                      <input type="file" class="rounded-full w-full block w-100 px-4 py-2 mt-3 bg-zinc-800"
+                        placeholder="Input address" id="stakeholder-upload" accept=".xls,.xlsx">
+                      <label for="roles" class="block my-5 text-sm font-medium text-zinc-400">Select Role</label>
+                      <select id="roles"
+                        class="bg-zinc-800 text-white text-sm rounded-full px-3 focus:ring-zinc-500 focus:rounded-full focus:border-zinc-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-zinc-500 dark:focus:border-zinc-500">
+                        <option value="2">Student</option>
+                        <option value="1">Teacher</option>
+                        <option value="0">Board of Directors</option>
+                      </select>
+                    </div>
+                    <div class="w-100 my-5">
+                      <div class="grid grid-cols-2 gap-4">
+                        <button type="button" id="btn-addStakeholder"
+                          class="rounded-full w-full px-4 py-2 text-sm block w-100 bg-red-600 hover:bg-red-500 border-green-400">
+                          Add StakeHolder
+                        </button>
+                        <button type="button" id="btn-multipleaddStakeholder"
+                          class="rounded-full w-full px-4 py-2 text-sm block w-100 bg-red-600 hover:bg-red-500 border-red-400">
+                          Add Multiple Stakeholder
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+        </section>
+
+      </main>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+    <script src="../js_files/admin.js"></script>
+  </body>
+
+
+</html>

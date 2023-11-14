@@ -1,0 +1,75 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_ownerName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_ownerNumber",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_ownerAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_model",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_soldDate",
+				"type": "string"
+			}
+		],
+		"name": "addVehicle",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getVehicles",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "ownerName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ownerNumber",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "OwnerAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "model",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "soldDate",
+						"type": "string"
+					}
+				],
+				"internalType": "struct VANET.Vehicle[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
